@@ -1,0 +1,11 @@
+*.pcap
+*.pcapng
+*.evtx
+*.log
+*.zip
+*.iso
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+*.swp
