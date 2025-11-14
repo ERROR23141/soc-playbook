@@ -13,7 +13,7 @@
 
 Common ports to remember:
 - 22 - SSH
-- 80 - HTTP (web, uncrypted)
+- 80 - HTTP (web, unencrypted)
 - 443 - HTTPS (web, encrypted)
 - 53 - DNS
 - 3389 - RDP
