@@ -57,3 +57,12 @@
 - **Network tools** - e.g. Wireshark, firewalls, IDS/IPS
 
 ## 5. Whys this matters to me 
+- My goal id to grow from **beginner -> blue team -> (eventually some red team skills)**
+- I want to start aas a **Tier 1 SOC analyst**, so I'm focusing on
+  - Reading and understanding logs and alerts
+  - Using tools like Wireshark, SIEM, and EDR
+  - Writing simple detection rules and basic incident reports
+- This repo is my **learning diary + portfolio** to prove i understand:
+  - What a SOC is
+  - What a SOC analyst does
+  - How blue team work looks in real life (not just theory)
