@@ -39,4 +39,21 @@
   - First to see alerts.
   - Does initial triage, closes obvious false positives, escalate real casses.
 - **Tier 2 (Intermediate):**
-  - 
+  - Deeper investigations.
+  - Looks at coreelated events across systems.
+  - May write detection rules and playbooks.
+- **Tier 3 / Incendent Responder / Threat Hunter:**
+  - Handles complex incidents, malware analysis, threat hunting.
+  - Tunes SIEM rules improves detection logic.
+- **SOC Manager:**
+  - Manages the team, processes, metrics, and communication with the rest of the business.
+
+## 4. Tools commonly mentioned
+
+- **SIEM** - central log + alerting platform.
+- **EDR/XDR** - endpoint detection/response (agent on machines).
+- **Ticketing system** - track incidents and tasks.
+- **Threat intelligence** - feeds with known bad IP's/domains/hashes
+- **Network tools** - e.g. Wireshark, firewalls, IDS/IPS
+
+## 5. Whys this matters to me 
