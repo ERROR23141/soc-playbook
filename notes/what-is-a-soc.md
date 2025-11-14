@@ -21,14 +21,14 @@
 
 - **Monitor alerts** in tools like a SIEM (Splunk, Sentinel, etc.) and EDR.
 - **Triage alerts:**
- - Look at logs and context.
- - Decide if it's a false positive or a real threat.
-- **Investigate suspisious activity:**
- - Check login history, process execution, network connections, file hashes.
- - Use tools like Wireshark, EDR cosoles, threat intel feeds.
+  - Look at logs and context.
+  - Decide if it’s a false positive or a real threat.
+- **Investigate suspicious activity:**
+  - Check login history, process execution, network connections, file hashes.
+  - Use tools like Wireshark, EDR consoles, threat intel feeds.
 - **Escalate or contain:**
   - Escalate serious cases to senior analysts or incident responders.
-  - Suggest actions: block IP's, disable accounts, isolate machines.
+  - Suggest actions: block IPs, disable accounts, isolate machines.
 - **Document everything:**
   - Write incident tickets or reports.
   - Note what happened, evidence, and actions taken.
