@@ -7,18 +7,14 @@
 - **Network:** VirtualBox host-only network `192.168.56.0/24`
 - **Capture location:** Wireshark on **Kali**, interface `eth1` (host-only)
 - **Web server on Ubuntu:**
-  ```bash
-  hostname -I        # shows 10.0.2.15 192.168.56.102 ...
-  cd ~
-  python3 -m http.server 8080
-- **Output:**
- - `Serving HTTP on 0.0.0.0 port 8080 (http://0.0.0.0:8080/) ...`
+  `hostname -I`        # shows 10.0.2.15 192.168.56.102 ...
+  `cd ~`
+  `python3 -m http.server 8080`
+- **Output:** `Serving HTTP on 0.0.0.0 port 8080 (http://0.0.0.0:8080/) ...`
 
 ## What I Did 
 
-1. Started the web server on Ubuntu using:
-   ```bash
-   python3 -m http.server 8080
+1. Started the web server on Ubuntu using: `python3 -m http.server 8080`
 2. On Kali, Started Wireshark and began a capture on interface `eth1`.
   -  (the host-only interface with IP `192.168.56.101`)
 3. From Kali generated HTTP traffic to the Ubuntu server.
@@ -51,9 +47,7 @@
 
 ## Lessons Learned 
 
-- How to start a simple web server with:
-  ```bash
-  python3 -m http.server 8080```
+- How to start a simple web server with: `python3 -m http.server 8080`
 - HTTP runs on top of TCP and can use non-standard ports like `8080` instead of `80`
 - Wireshark display filters:
   - `tcp.port == 8080` is useful when you know the port but Wireshark doesn't decode as HTTP yet.
@@ -84,3 +78,6 @@
 
 ![Full HTTP GET request and HTML response](./screenshots/http-follow-tcp-stream.png)
 
+### Browser view of the HTTP server
+
+![Firefox showing directory listing from Python http.server](./screenshots/http-browser-directory-listing.png)
