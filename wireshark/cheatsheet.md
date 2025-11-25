@@ -10,3 +10,9 @@
 - `tcp.port == 22` – SSH traffic
 - `ip.addr == 192.168.56.102` – all traffic to/from my Ubuntu VM  
   *(change IP when needed)*
+
+## HTTP traffic
+
+- `tcp.port == 8080` – traffic to my test Python server
+- `http` – show decoded HTTP packets
+- Use **Follow → TCP Stream** on an HTTP packet to see the full request and response.
