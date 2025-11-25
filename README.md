@@ -9,7 +9,7 @@ Hands-on cybersecurity portfolio: blue team labs, detections (KQL/SPL), Wireshar
 ## Highlights
 
 - 🛡️ Detections (KQL/SPL) mapped to **MITRE ATT&CK**
-- 📡 Wireshark display filters with **packet analysis notes**
+- 📡 Wireshark display filters with **packet analysis notes and labs** (ICMP/SSH/HTTP)
 - 📂 Incident reports based on **CTFs / labs**
 - 🌐 Web attack diary (defender’s view of common web attacks)
 - 🔍 (Planned) Hunts & capstone investigations
@@ -31,8 +31,10 @@ Hands-on cybersecurity portfolio: blue team labs, detections (KQL/SPL), Wireshar
 
 If you’re looking through this repo, start here:
 
-1. **Wireshark basics**  
-   - [`/wireshark/cheatsheet.md`](./wireshark/cheatsheet.md) – core display filters and notes.
+1. **Wireshark basics & labs**  
+   - [`/wireshark/cheatsheet.md`](./wireshark/cheatsheet.md) – core display filters and notes  
+   - [`/wireshark/practice-2025-11-24.md`](./wireshark/practice-2025-11-24.md) – ICMP + SSH lab  
+   - [`/wireshark/practice-2025-11-25-http.md`](./wireshark/practice-2025-11-25-http.md) – HTTP (port 8080) lab  
 
 2. **Detections**  
    - [`/detections/`](./detections/) – KQL/SPL queries with:
