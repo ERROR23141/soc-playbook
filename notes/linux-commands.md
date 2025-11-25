@@ -29,6 +29,7 @@
 - `ip a` – show interfaces and IP addresses
 - `hostname -I` – show IP addresses quickly
 - `ssh user@host` – connect to a remote machine over SSH
+- `curl http://host:port` – make an HTTP request from the terminal
 
 ## System and Services
 
@@ -48,3 +49,7 @@
 
 - `cat ./-` – read a file that starts with `-`
 - `cat -- "--spaces in this filename--"` – read a file that starts with `--` and has spaces
+
+## Quick web server
+
+- `python3 -m http.server 8080` – start a simple HTTP server in the current directory on port 8080
