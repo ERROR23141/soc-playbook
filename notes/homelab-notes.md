@@ -4,7 +4,7 @@
 
 - Windows Firewall blocks inbound ping (ICMP) by default.
 - To allow ping to Windows VM I enabled the **"File and Printer Sharing (Echo Request - ICMPv4-In)"** inbound rule.
-  = Open: **Windows Defender Firewall with Advanced Security** → **Inbound Rules**
+  - Open: **Windows Defender Firewall with Advanced Security** → **Inbound Rules**
   - Find rules named **“File and Printer Sharing (Echo Request – ICMPv4-In)”**
   - Enable the rule for the profile in use (Private/Public).
 
@@ -48,4 +48,8 @@
 - Tested from Kali using:
   ```bash
   ssh <ubuntu_user>@192.168.56.102
+- Used as a simple web server for labs with:
+  ```bash
+  python3 -m http.server 8080
+
   
