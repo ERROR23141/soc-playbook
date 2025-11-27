@@ -69,9 +69,9 @@
   - `ls`
   - `cd inhere`
   - `ls -a`
-    (saw files named `-file00` to `-file09`
+    (saw files named `-file00` to `-file09`)
   - `file ./*`
-    (to check which file is ASCII text (human-readable)
+    (to check which file is ASCII text (human-readable))
   - `cat < -file07`
 
 - **Lesson learned**
