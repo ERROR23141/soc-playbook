@@ -1,7 +1,7 @@
 # Bandit Level Notes
 
 ## Level 0 → 1
-- **Goal:**  
+- **Goal:**
   Get the password for the next level (bandit1) by reading the `readme` file on the server.
 
 - **Commands I used:**  
