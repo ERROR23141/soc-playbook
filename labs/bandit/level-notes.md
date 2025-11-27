@@ -1,6 +1,6 @@
 # Bandit Level Notes
 
-## Level 0 -> 1
+## Level 0 → 1
 - **Goal:**  
   Get the password for the next level (bandit1) by reading the `readme` file on the server.
 
@@ -45,5 +45,39 @@
     - Using `--` to mark the end of options: `cat -- <filename>`
     - Or prefixing with `./` and quoting the name: `cat "./filename with spaces"`
 
+## Level 3 → 4
+- **Goal:**
+  Find the password stored in a *hidden* file inside the `inhere` directory.
 
+- **Commands I used:**
+  - `ls`
+  - `cd inhere`
+  - `ls -a`
+    (showed a hidden file named `...Hiding-From-You`)
+  - `cat ...Hiding-From-You`
 
+- **Lesson Learned:**
+  -  Hidden files start with a dot `.` and dont show up with normal `ls`.
+  -  Use `ls -a` (or `ls -la`) to see hidden files.
+  -  If `cd <name>` gives `Not a directory` it means its a **file** not a folder.
+
+## Level 4 → 5
+- **Goal:**
+  Find the only human-readable file in `inhere` that contains the next password.
+
+- **Commands I used:**
+  - `ls`
+  - `cd inhere`
+  - `ls -a`
+    (saw files named `-file00` to `-file09`
+  - `file ./*`
+    (to check which file is ASCII text (human-readable)
+  - `cat < -file07`
+
+- **Lesson learned**
+  - The `file` command is useful to quickly identify which files are text or binary.
+  - Filenames that start with `-` are treated like options by many commands.
+  - You can read those files using:
+    - `cat -- -file07`
+    - `cat ./-file07`
+    - `cat < -file07` (input redirection)
