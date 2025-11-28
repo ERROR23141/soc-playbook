@@ -46,4 +46,4 @@
 - Tested from Kali using:
   - `ssh <ubuntu_user>@192.168.56.102`
 - Used as a simple web server for labs with:
-  -`python3 -m http.server 8080`
+  - `python3 -m http.server 8080`
