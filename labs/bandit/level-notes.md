@@ -90,6 +90,7 @@
   - `ls`
   - `cd inhere`
   - `ls -a`
+    (saw dir named 'maybehere00`...`maybehere19`)
   - `find . -type f -size 1033c ! -executable`
   - `cd maybehere07`
   - `cat .file2`
@@ -99,3 +100,38 @@
     - `-type f` → only files
     - `-size 1033c` → size is exactly 1033 bytes (`c` = bytes)
     - `! -executable` → exclude executable files
+
+## Level 6 → 7
+- **Goal:**
+  Find a file on the system that is:
+  - owned by user `bandit7`
+  - owend by group `bandit6`
+  - 33 bytes in size
+  and read its contents to get the next password.
+
+- **Commands I used:**
+  - `cd /`
+  - `find . -user bandit7 -group bandit6 -size 33c 2>/dev/null`
+  - `cat ./var/lib/dpkg/info/bandit7.password`
+
+- **Lessons learned**
+  - `find` can search by:
+    - `-user <name>` → file owner
+    - `-group <name>` → group
+    - `-size 33c` → file size
+  - `2>/dev/null` hides "Permission denied" errors when searching from `/`.
+
+## Level 7 → 8
+- **Goal:**
+  Find the line in `data.txt` that contains the word `millionth` and use the value next to it as the password.
+
+- **Commands I used**
+  - `ls`
+    (showed data.txt file which contains a long list of txt)
+  - `grep millionth data.txt`
+
+- **Lessons learned**
+- `grep <pattern> <file>` searches for lines in a file that match a pattern.
+  (eliminates the need to scroll through the file manually)
+- `grep` is a key tool for log analysis and text processing.
+
