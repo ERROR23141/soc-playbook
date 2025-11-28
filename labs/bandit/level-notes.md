@@ -81,3 +81,21 @@
     - `cat -- -file07`
     - `cat ./-file07`
     - `cat < -file07` (input redirection)
+
+## Level 5 → 6
+- **Goal:**
+  Find the only file in `inhere` that matches specific properties (size and permissions) and get the password from it.
+
+- **Commands I used:**
+  - `ls`
+  - `cd inhere`
+  - `ls -a`
+  - `find . -type f -size 1033c ! -executable`
+  - `cd maybehere07`
+  - `cat .file2`
+
+- **Lessons learned:**
+  - `find` can search with filters
+    - `-type f` → only files
+    - `-size 1033c` → size is exactly 1033 bytes (`c` = bytes)
+    - `! -executable` → exclude executable files
