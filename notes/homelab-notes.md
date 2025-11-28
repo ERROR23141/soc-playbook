@@ -40,16 +40,10 @@
 ### Ubuntu
 
 - SSH server installed:
-  ```bash
-  sudo apt install openssh-server
+  - `sudo apt install openssh-server`
 - SSH enabled and started:
-  ```bash
-  sudo systemctl enable --now ssh
+  - `sudo systemctl enable --now ssh`
 - Tested from Kali using:
-  ```bash
-  ssh <ubuntu_user>@192.168.56.102
+  - `ssh <ubuntu_user>@192.168.56.102`
 - Used as a simple web server for labs with:
-  ```bash
-  python3 -m http.server 8080
-
-  
+  -`python3 -m http.server 8080`
