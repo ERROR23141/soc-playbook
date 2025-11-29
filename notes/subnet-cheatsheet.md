@@ -14,6 +14,14 @@
 | /24  | 255.255.255.0   | 254                 |
 | /23  | 255.255.254.0   | 510                 |
 | /22  | 255.255.252.0   | 1022                |
+## Common CIDR blocks
+- `24` - 256 addresses (254 usable hosts)
+- `25` - 128 addresses (126 usable hosts)
+- `26` - 64 addresses (62 usable hosts)
+## Example: 192.168.56.0/24
+- Network: `192.168.56.0`
+- Usable hosts: `192.168.56.1` - `192.168.56.254`
+- Broadcasts: `192.168.56.255`
 
 ## Powers of 2 (for quick subnet math)
 
