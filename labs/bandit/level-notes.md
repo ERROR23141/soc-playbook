@@ -135,3 +135,19 @@
   (eliminates the need to scroll through the file manually)
 - `grep` is a key tool for log analysis and text processing.
 
+## Level 8 → 9
+
+- **Goal:**  
+  From `data.txt`, find the only line that appears exactly once and use it as the password.
+
+- **Commands I used:**
+  - `ls`
+  - `wc -l data.txt`    # checked how many lines were in the file
+  - `sort data.txt | uniq -u`
+
+- **Lessons learned:**
+  - `sort` arranges lines so duplicates are next to each other.
+  - `uniq -u` shows only lines that appear exactly once.
+  - Piping commands together (`sort data.txt | uniq -u`) is powerful for quickly analyzing large text files.
+
+
