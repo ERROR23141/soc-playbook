@@ -37,7 +37,7 @@ Common ports to remember:
 ## Domain Name System (DNS)
 
 - Translates domain names (e.g. 'example.com') into IP addresses.
-- You type a domain -> DNS resolver asks servers -> gets an IP -> your browser connects.
+- You type a domain → DNS resolver asks servers → gets an IP → your browser connects.
 
 ## HTTP vs HTTPS
 
