@@ -59,3 +59,32 @@ Common ports to remember:
 - Give one example of a TCP protocol and one UDP protocol.
   - TCP: downloading a document or email
   - UDP: watching netflix
+
+## LAN vs WAN
+
+**LAN (Local Area Network):**
+- Small / local scope (home, office or lab)
+- Usually owned and managed by one person or organization.
+- Example: my VirtualBox lab network `192.168.56.0/24`.
+
+**WAN (Wide Area Network):**
+- Large / long distance network (internet, ISP networks)
+- Connects multiple LANs together over bigger distances.
+- Example: my home network connects to the ISP then connects to the wider internet.
+
+## Switch vs Router 
+
+**Switch:**
+- Connects devices inside the same LAN.
+- Works mainly with MAC addresses.
+- Forwards frames only to the correct port on the local network.
+
+**Router:**
+- Connects diffrent networks/LANs together.
+- Works with IP addresses.
+- Decides where packets go between networks.
+
+## What is a subnet?
+- A subnet is a slice of a larger IP network.
+- It defines which IPs are considered local to each other.
+- Example: `192.168.56.0/24`
