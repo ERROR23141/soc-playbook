@@ -53,3 +53,11 @@
 ## Quick web server
 
 - `python3 -m http.server 8080` – start a simple HTTP server in the current directory on port 8080
+
+## Inspecting / decoding data
+
+- `strings file` – show printable strings inside a binary or unknown file.
+- `strings file | grep "pattern"` – search for a string inside a binary file.
+- `base64 -d file` – decode a base64-encoded file.
+- `cat file | base64 -d` – decode base64 from stdin (piped input).
+- `cat file | tr 'A-Za-z' 'N-ZA-Mn-za-m'` – decode/encode ROT13.
