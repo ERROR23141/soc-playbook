@@ -16,3 +16,11 @@
 - `tcp.port == 8080` – traffic to my test Python server
 - `http` – show decoded HTTP packets
 - Use **Follow → TCP Stream** on an HTTP packet to see the full request and response.
+
+## DNS traffic
+
+- `udp.port == 53` - DNS queries and responses.
+- `dns` - only DNS protocol packets.
+- `dns.qry.name == "example.com"` - DNS queries for specific domains.
+- `dns.flags.response == 0` - DNS queries only.
+- `dns.flags.response == 1` - DNS responses only. 
