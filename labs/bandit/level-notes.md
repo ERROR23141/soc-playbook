@@ -150,4 +150,50 @@
   - `uniq -u` shows only lines that appear exactly once.
   - Piping commands together (`sort data.txt | uniq -u`) is powerful for quickly analyzing large text files.
 
+## Level 9 → 10
+
+- **Goal:**
+  Find the password in `data.txt`. It is one of the few (human readable) strings and starts with several `=` charecters.
+
+- **Commands I used:**
+  - `ls`
+  - `file data.txt`
+  - `strings data.txt | head`
+  - `strings data.txt | grep "==="`
+
+- **Lessons learned:**
+  - `strings <file>` extracts printable (human readable) string from a binary/mixed file.
+  - You can pipe `strings` into `grep` to quickly search for patterns:
+    - `strings data.txt | grep "==="`
+
+## Level 10 → 11
+
+- **Goal:**
+  The password for the next level in stored in `data.txt` which is base64 encoded.
+
+- **Commands I used:**
+  - `ls`
+  - `cat data.txt`
+  - `base64 -d data.txt`
+  - `cat data.txt | base64 -d`
+
+- **Lessons learned:**
+  - `base64 -d data.txt` decodes base64 encoded data.
+  - You can decode a file directly `base64 -d data.txt` or use pipes `cat data.txt | base64 -d`.
+
+## Level 11 → 12
+
+- **Goal:**
+  The password is in `data.txt` and has been encrypted with ROT13.
+
+- **Commands I used:**
+  - `ls`
+  - `cat data.txt`
+  - `cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'`
+
+- **Lessons learned:**
+  - ROT13 rotates letters by 13 positions.
+  - You can decode ROT13 with:
+    - `tr 'A-Za-z' 'N-ZA-Mn-za-m'`
+
 
