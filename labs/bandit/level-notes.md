@@ -196,4 +196,80 @@
   - You can decode ROT13 with:
     - `tr 'A-Za-z' 'N-ZA-Mn-za-m'`
 
+## Level 12 → 13
+
+- **Goal:**
+  `data.txt` is a hexdump of a file that has been compressed multiple times. Rebuild the original file and read the password.
+
+- **Commands I used:**
+  - `cd /tmp && mkdir bandit12_lab && cd bandit12_lab`
+  - `cp /home/bandit12/data.txt .`
+  - `xxd -r data.txt data.bin`          # hexdump → binary
+  - `file data.bin`                     # see compression type
+  - Repeated this pattern as needed:
+    - rename: `mv data.bin data.gz` / `mv data data.bz2` / `mv data data.tar` …
+    - decompress: `gunzip data.gz` / `bzip2 -d data.bz2` / `tar xf data.tar`
+    - check again with: `file data*`
+  - Once `file` showed **ASCII text** (`data8`):
+    - `cat data8`                       # password
+
+- **Lessons learned:**
+  - `xxd -r` reverses a hexdump back into the original binary file.
+  - `file` tells you what kind of compression/wrapper you’re dealing with.
+  - Multi-layer compressed files can be peeled like an onion: `gzip → bzip2 → tar → …`
+  - Doing all of this in `/tmp` keeps your home directory clean and safe.
+
+## Level 13 → 14
+
+- **Goal:**
+  Use the private SSH key provided in the `bandit13` home directory to log in as `bandit14` and read the next password from 
+  `/etc/bandit_pass/bandit14`.
+
+- **Commands I used:**
+  - From my machine:
+    - `ssh bandit13@bandit.labs.overthewire.org -p 2220`
+  - On the Bandit server as `bandit13`:
+    - `ls`  
+      *(saw the file `sshkey.private` in the home directory)*  
+    - `ssh -i sshkey.private bandit14@localhost -p 2220`  
+      *(use the private key instead of a password to log in as `bandit14` on the same box)*  
+  - On the Bandit server as `bandit14`:
+    - `cat /etc/bandit_pass/bandit14`
+
+- **Lessons learned:**
+  - You can log into another user on the *same* machine using `localhost`:
+    - `ssh -i <keyfile> otheruser@localhost -p 2220`
+  - The `-i` option tells SSH which **private key** to use for authentication.
+  - When a password login is blocked, key-based auth can still be allowed.
+  - Once you are the right user (here, `bandit14`), you can read files that only that user is allowed to access, like  
+    `/etc/bandit_pass/bandit14`.
+
+## Level 14 → 15
+
+- **Goal:**
+  Send the `bandit14` password to a service listening on `localhost` port `30000` and get the password for `bandit15`.
+
+- **Commands I used:**
+  - `nc localhost 30000`
+  # pasted the bandit14 password and pressed Enter
+
+- **Lessons learned:**
+  - `nc` (netcat) lets you connect to a TCP port and type/paste data directly.
+  - Some services simply expect a secret on a specific port and then return a response (like the next password).
+
+## Level 15 → 16
+
+- **Goal:**
+  Use **SSL** to send the `bandit15` password to a service on `localhost` port `30001` and get the password for `bandit16`.
+
+- **Commands I used:**
+  - `openssl s_client -connect localhost:30001`
+  # after the SSL connection is established:
+  # pasted the bandit15 password and pressed Enter
+
+- **Lessons learned:**
+  - `openssl s_client -connect host:port` opens an encrypted (TLS/SSL) connection to a service.
+  - After the TLS handshake you can type into the session just like with `nc`.
+  - Some services are the same idea as Level 14 but wrapped in encryption (common in real world protocols like HTTPS).
+
 
