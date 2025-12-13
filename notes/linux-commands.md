@@ -16,6 +16,8 @@
 - `rm filename` – delete a file
 - `mkdir dir` – create a new directory
 - `rm -r dir` – delete a directory and its contents
+- `file filename` - detect file type (text, binary, gzip, bzip2, tar, etc.)
+- `xxd -r in.txt out.bin` - reverse a hexdump back into a binary file
 
 ## Permissions
 
@@ -30,6 +32,10 @@
 - `hostname -I` – show IP addresses quickly
 - `ssh user@host` – connect to a remote machine over SSH
 - `curl http://host:port` – make an HTTP request from the terminal
+- `nc host port` - open a raw TCP connection to a host/port (netcat)
+  - Example: `nc localhost 30000`
+- `openssl s_client -connect host:port` - open an SSL/TLS connection
+  - Example: `openssl s_client -connect localhost:30001`
 
 ## System and Services
 
@@ -61,3 +67,9 @@
 - `base64 -d file` – decode a base64-encoded file.
 - `cat file | base64 -d` – decode base64 from stdin (piped input).
 - `cat file | tr 'A-Za-z' 'N-ZA-Mn-za-m'` – decode/encode ROT13.
+
+## Compression & Archives
+
+- `tar xf archive.tar` - extract a tar archive
+- `gunzip file.gz` - decompress a gzip file
+- `bzip2 -d file.bz2` - decompress a bzip2 file
