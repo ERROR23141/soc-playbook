@@ -216,3 +216,14 @@ On the **Ubuntu** side this is reversed:
 - L7: web server reads the HTTP request and sends an HTTP response back the same way.
 
 ---
+
+## Router basics 
+
+- Routers connect **diffrent networks** and forwards packets between them.
+- Hosts send traffic to a **default gateway** (the router) if the destination is outside their subnet.
+- Routers use:
+  - A **routing table** to decide which interface/next hop to send a packet to.
+  - An **ARP table** to map IP → MAC on each connected network.
+- At each hop:
+  - Layer 2 (MAC addresses) change
+  - Layer 3 (IP addresses) usually stay the same.
