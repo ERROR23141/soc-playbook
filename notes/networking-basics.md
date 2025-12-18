@@ -34,21 +34,16 @@ Common ports to remember:
   - Connectionless, "fire and forget".
   - Used for: DNS, streaming, some VPNs, games.
 
-## Domain Name System (DNS)
-
-- Translates domain names (e.g. 'example.com') into IP addresses.
-- You type a domain → DNS resolver asks servers → gets an IP → your browser connects.
-
 ## HTTP vs HTTPS
 
 **Hypertext Transfer Protocol (HTTP)**
-- HyperText Transfer Protocol.
-- Data is **cleartext** on the network (can be sniffed).
+- Cleartext web traffic (usually **TCP/80**)
+- Can be sniffed.
+- Can be fully read in Wireshark (`http` filter + FOLLOW TCP Stream)
 
 **Hypertext Transfer Protocol Secure (HTTPS)**
-- HTTP + TLS encryption.
-- Protects data in transit (e.g. logins, cookies).
-- Uses port 443 by default.
+- HTTP over **TLS/SSL** (usually **TCP/443**).
+- Encrypted, protects data in transit (e.g. logins, cookies).
 
 ## Quick questions for myself
 
@@ -227,3 +222,57 @@ On the **Ubuntu** side this is reversed:
 - At each hop:
   - Layer 2 (MAC addresses) change
   - Layer 3 (IP addresses) usually stay the same.
+
+---
+
+## Core protocols
+
+### ARP (Address Resolution Protocol)
+
+- Used on local networks to map **IP address → Mac address**.
+- Example: "Who has 192.168.1.10? Tell 192.168.1.5."
+- In Wireshark:
+  - Filter: `arp`
+  - Youll see **ARP Request** and  **ARP Reply**.
+
+### DNS (Domain Name System)
+
+- Translates **domain names → IP addresses**.
+- Example: `github.com` → `140.82.x.x`
+- Typical port: **53/UDP** (sometimes TCP).
+- Wireshark filters:
+  - `dns`
+  - `udp.port == 53`
+
+### DHCP (Dynamic Host Configuration Protocol)
+
+- Automatically gives clients:
+  - IP addresses
+  - Subnet mask
+  - Default gateway
+  - DNS server
+- Used when a device first joins the network (DISCOVER → OFFER → REQUEST → ACK)
+
+## HTTP vs HTTPS
+
+**Hypertext Transfer Protocol (HTTP)**
+- Cleartext web traffic (usually **TCP/80**)
+- Can be sniffed.
+- Can be fully read in Wireshark (`http` filter + FOLLOW TCP Stream)
+
+**Hypertext Transfer Protocol Secure (HTTPS)**
+- HTTP over **TLS/SSL** (usually **TCP/443**).
+- Encrypted, protects data in transit (e.g. logins, cookies).
+
+
+---
+
+## "4 things" a host needs for internet access.
+
+To reach the internet a host needs:
+
+- An **IP address**
+- A **subnet mask**
+- A **default gateway** (router IP)
+- A **DNS server**
+(Usually all of these come from **DHCP**.)
