@@ -34,17 +34,6 @@ Common ports to remember:
   - Connectionless, "fire and forget".
   - Used for: DNS, streaming, some VPNs, games.
 
-## HTTP vs HTTPS
-
-**Hypertext Transfer Protocol (HTTP)**
-- Cleartext web traffic (usually **TCP/80**)
-- Can be sniffed.
-- Can be fully read in Wireshark (`http` filter + FOLLOW TCP Stream)
-
-**Hypertext Transfer Protocol Secure (HTTPS)**
-- HTTP over **TLS/SSL** (usually **TCP/443**).
-- Encrypted, protects data in transit (e.g. logins, cookies).
-
 ## Quick questions for myself
 
 - What is an IP address? A unique number assinged by a router to identify a device on a network.
