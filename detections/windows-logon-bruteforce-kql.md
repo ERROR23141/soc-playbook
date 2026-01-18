@@ -28,7 +28,7 @@ Detect possible **brute force attacks against Windows logons** by lookinf for:
 
 **Use case:** find accounts that had **>= 10 failed logons** from the same IP in a 10 minute window.
 
-''' kusto
+``` kusto
 // Simple brute force detection: many failed logons in 10 minutes
 SecurityEvent
 | where TimeGenerated > ago(1d)
