@@ -13,6 +13,22 @@ Detect possible **brute force attacks against Windows logons** by lookinf for:
 
 ##Data Source
 
-- Table: SecurityEvent `(Windows Security Logs ingested into Microsoft Sentinel)
+- Table: SecurityEvent (Windows Security Logs ingested into Microsoft Sentinel)
 - Key fields used (names may vary slightly by enviroment):
-  - EventID`-
+  - EventID - Windows event ID
+  - TimeGenerated - time of the event
+  - Account - username/account that attempted to log in
+  - IpAddress - source IP address of the logon
+
+> May need to adjust field names (e.g. Accounts - TargetAccounts or SubjectUserName) depending how logs are parsed.
+
+---
+
+##Query 1 - Simple Brute Forece: Many Failed Logons
+
+**Use case:** find accounts that had **>= 10 failed logons** from the same IP in a 10 minute window.
+
+kusto
+// Simple brute force detection: many failed logons in 10 minutes
+SecurityEvent
+| where TimeGenerated > ago(1d)
