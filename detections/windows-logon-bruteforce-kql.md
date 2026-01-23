@@ -58,6 +58,18 @@ let FailedLogons =
 let SuccesfulLogons =
     SecurityEvent
     | where TimeGenerated > ago(TimeFrame)
-    | where EventID == 4624          // succesful logon
-    | summarize SuccessTime 
-
+    | where EventID == 4624          // successful logon
+    | summarize SuccessTime = min(TimeGenerated)
+        by Account, IpAdress;
+FailedLogons
+| join kind=inner SuccesfulLogons on Account, IpAdress
+| where FailedCount >= 5          // at least 5 failures
+    and SuccessTime > LastFailure          // success after the failures
+    and SuccessTime < LastFailure + 15m          //within 15 minutes
+| project Account,
+      IpAdress,
+      FailedCount,
+      FirstFailure,
+      LastFailure,
+      SuccessTime
+| order by FailedCount desc
