@@ -42,7 +42,7 @@ Key goals:
 
 ## 3. Environment
 
-- **Platform:** Wazuh deployed via **Docker** using a lab-provided `docker-compose`/YAML configuration  
+- **Platform:** Wazuh deployed via **Docker** using a lab provided `docker-compose`/YAML configuration  
 - **Data sources (lab logs):**
   - Firewall events (connections, blocked/allowed, ports)
   - IDS alerts (signatures for scanning, brute force, exploit attempts)
@@ -74,7 +74,7 @@ Key goals:
 
 4. **Map to MITRE & characterize the actor**
    - Mapped observed TTPs to **MITRE ATT&CK** (e.g. brute force, remote services, discovery).
-   - Compared the pattern to common **financial-sector threat actors** (e.g. credential-stealing and lateral movement heavy groups) focusing less on naming a specific group and more on the **behavior profile**.
+   - Compared the pattern to common **financial sector threat actors** (e.g. credential stealing and lateral movement heavy groups) focusing less on naming a specific group and more on the **behavior profile**.
 
 5. **Document findings & mitigations**
    - Summarized IOCs, TTPs and impact.
@@ -108,7 +108,7 @@ This sequence looks like:
 |---------------|--------------------------------------|------------:|-----------------------------------------------|
 | `203.0.113.75` | Repeated RDP failures, then success  | 09:15–09:42 | Windows Security Logs (4625 → 4624)          |
 | `203.0.113.35` | SMB scan against many hosts (TCP/445)| ~09:50      | Firewall / IDS logs (horizontal 445 scans)   |
-| `198.51.100.63`| SSH brute-force (multiple failures)  | ~10:05      | Linux auth logs (failed SSH logins)          |
+| `198.51.100.63`| SSH brute force (multiple failures)  | ~10:05      | Linux auth logs (failed SSH logins)          |
 | `198.51.100.53`| Telnet login attempts (TCP/23)       | ~10:15      | Firewall / IDS logs (external Telnet probes) |
 
 ---
@@ -143,7 +143,7 @@ This sequence looks like:
 
 These can be implemented as Wazuh rules / SIEM correlation searches:
 
-1. **RDP brute-force with follow-up success**
+1. **RDP brute-force with follow up success**
    - Correlate:
      - Many `4625` failures from one IP → one `4624` success soon after.
    - Alert as **“Potential RDP account compromise”**.
@@ -153,7 +153,7 @@ These can be implemented as Wazuh rules / SIEM correlation searches:
    - Alert as **“External SMB scanning – possible lateral movement prep”**.
 
 3. **SSH brute-force**
-   - Threshold-based alert on repeated `Failed password for <user>` from a single IP in Linux auth logs.
+   - Threshold based alert on repeated `Failed password for <user>` from a single IP in Linux auth logs.
 
 4. **Telnet usage**
    - Any inbound Telnet (`TCP/23`) from the internet should be extremely rare.
@@ -163,4 +163,4 @@ These can be implemented as Wazuh rules / SIEM correlation searches:
    - Monitor and alert on:
      - New local/domain admins
      - Changes to sensitive AD groups
-   - Useful for detecting post-compromise privilege escalation.
+   - Useful for detecting post compromise privilege escalation.
