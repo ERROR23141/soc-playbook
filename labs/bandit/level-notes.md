@@ -264,8 +264,6 @@
 
 - **Commands I used:**
   - `openssl s_client -connect localhost:30001`
-  # after the SSL connection is established:
-  # pasted the bandit15 password and pressed Enter
 
 - **Lessons learned:**
   - `openssl s_client -connect host:port` opens an encrypted (TLS/SSL) connection to a service.
