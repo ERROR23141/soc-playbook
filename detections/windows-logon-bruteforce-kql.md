@@ -2,11 +2,11 @@
 
 ## Purpose
 
-Detect possible **brute force attacks against Windows logons** by lookinf for:
+Detect possible **brute force attacks against Windows logons** by looking for:
 
 - Many **failed logon attempts** (Event ID 4625)
-- from the same **account + IP address**
-- In a short time window
+- From the same **account + IP address**
+  Short time window
 - Optionally followed by a **successful logon** (Event ID 4624)
 
 ---
