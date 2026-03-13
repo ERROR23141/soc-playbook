@@ -1,6 +1,6 @@
 # Detections: Windows Logon Brute Force (KQL - Microsoft Sentinel)
 
-##Purpose
+## Purpose
 
 Detect possible **brute force attacks against Windows logons** by lookinf for:
 
@@ -11,7 +11,7 @@ Detect possible **brute force attacks against Windows logons** by lookinf for:
 
 ---
 
-##Data Source
+## Data Source
 
 - Table: SecurityEvent (Windows Security Logs ingested into Microsoft Sentinel)
 - Key fields used (names may vary slightly by enviroment):
@@ -24,7 +24,7 @@ Detect possible **brute force attacks against Windows logons** by lookinf for:
 
 ---
 
-##Query 1 - Simple Brute Forece: Many Failed Logons
+## Query 1 - Simple Brute Forece: Many Failed Logons
 
 **Use case:** find accounts that had **>= 10 failed logons** from the same IP in a 10 minute window.
 
@@ -41,7 +41,7 @@ SecurityEvent
 
 ---
 
-##Query 2 - Failures Followed by Success (More Dangerous)
+## Query 2 - Failures Followed by Success (More Dangerous)
 
 **Use case:** catch the situation where an attacker **eventually succeeds** after many failures.
 
