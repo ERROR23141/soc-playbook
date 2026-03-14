@@ -15,6 +15,7 @@ Alert triggerd from KQL detection: Windows Logon Brute Force.
 
 ## Indicators
 Source IP: 185.xx.xxx
+
 Target Account: admin_user
 
 ## Investigation
