@@ -22,6 +22,11 @@ Detect possible **brute force attacks against Windows logons** by looking for:
 
 > May need to adjust field names (e.g. Accounts - TargetAccounts or SubjectUserName) depending how logs are parsed.
 
+Events used:
+
+- **4625** - Failed logon
+- **4624** - Successful logon
+
 ---
 
 ## Query 1 - Simple Brute Forece: Many Failed Logons
@@ -38,6 +43,18 @@ SecurityEvent
 | where FailedCount >= 10
 | order by FailedCount desc
 ```
+## What This Detection Looks For
+
+This query searches for:
+  - repeated failed Windows logons
+  - against the same account
+  - from the same source IP
+  - grouped into 10 minute windows
+
+This can indicate:
+  - password spraying
+  - brute force attacks
+  - repeated unauthorized access attempts
 
 ---
 
@@ -73,3 +90,53 @@ FailedLogons
       LastFailure,
       SuccessTime
 | order by FailedCount desc
+```
+## What This Detection Looks For
+
+This queary seaches for:
+  - multiple failed logons
+  - followed by a succesful logon
+  - from the same account and IP
+  - whithin a short time period
+
+This is more dangerous than failures alone because it may indicate:
+  - a successful brute force compromise
+  - unauthorized account access
+  - a valid credential being quessed or stolen
+
+---
+
+## MITRE ATT&CK Mapping
+
+Technique: T1110 - Brute Force
+
+Tactic:
+  - Credential Access
+  - Initial Access
+
+---
+
+## Analyst Investigation Steps
+
+If the detection triggers:
+  1. Identify the account being targeted
+  2. Review the source IP address
+  3. Check whether the IP is internal or external
+  4. Investigate whether the successful logon was expected
+  5. Review any activity after the successful login:
+       - new process
+       - privilege changes
+       - lateral movement
+  6. Reset or disable the account if compromise is suspected
+
+ ---
+
+ ## SOC Relevance
+
+ Brute force and password spraying attempts are common in real enviroments.
+
+ This detection helps a SOC analyst:
+   - spot authentication abuse early
+   - prioritize accounts at risk
+   - identify possible account compromise
+   - correlate failed logons with follow up activity
