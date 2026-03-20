@@ -140,3 +140,11 @@ If the detection triggers:
    - prioritize accounts at risk
    - identify possible account compromise
    - correlate failed logons with follow up activity
+
+---
+
+## Related Incident Example
+
+See example investigation:
+
+ - [Brute Force Incident Report](../incidents/brute-force-investigation.md)
