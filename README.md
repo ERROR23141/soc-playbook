@@ -1,50 +1,72 @@
-# soc-playbook (Beginner → Blue → Red)
+# SOC Playbook – Luis Cervantes
 
-Hands-on cybersecurity portfolio: blue team labs, detections (KQL/SPL), Wireshark notes, incident reports, and a web attack diary from the defender’s point of view.
+This repository showcases my hands on cybersecurity training and projects focused on Security Operations Center (SOC) workflows.
 
-**Repo:** https://github.com/ERROR23141/soc-playbook
+It includes practical experience in:
 
----
+- SIEM based detections (KQL)
+- Wireshark network traffic analysis
+- Incident investigations
+- Threat hunting exercises (Wazuh, Splunk)
+- Linux system investigation
+- A full network security capstone project
 
-## Highlights
-
-- 🛡️ Detections (KQL/SPL) mapped to **MITRE ATT&CK**
-- 📡 Wireshark display filters with **packet analysis notes and labs** (ICMP/SSH/HTTP)
-- 📂 Incident reports based on **CTFs / labs**
-- 🌐 Web attack diary (defender’s view of common web attacks)
-- 🔍 (Planned) Hunts & capstone investigations
-
----
-
-## Directory
-
-- `/detections` – SIEM-style queries (KQL/SPL) + explanations + ATT&CK IDs  
-- `/wireshark` – Cheatsheets, filters, and practice notes from pcaps  
-- `/hunts` – Threat hunting ideas, hypotheses, and queries  
-- `/incidents` – Structured incident reports (summary, timeline, detection, response, lessons learned)  
-- `/web-attack-diary` – Notes on web attacks (SQLi, XSS, etc.) from a blue team perspective  
-- `/capstone` – End-to-end case studies combining packets, detections, and incident reports  
+The goal of this repository is to demonstrate real world SOC analyst skills, including monitoring, alert triage, investigation and incident response.
 
 ---
 
-## Getting Started
+## 🔥 Capstone Project
 
-If you’re looking through this repo, start here:
+- [Network Security & Resilience Assessment](./capstone/acme-aerotech-network-assessment.md)
 
-1. **Wireshark basics & labs**  
-   - [`/wireshark/cheatsheet.md`](./wireshark/cheatsheet.md) – core display filters and notes  
-   - [`/wireshark/practice-2025-11-24.md`](./wireshark/practice-2025-11-24.md) – ICMP + SSH lab  
-   - [`/wireshark/practice-2025-11-25-http.md`](./wireshark/practice-2025-11-25-http.md) – HTTP (port 8080) lab  
+This capstone project analyzes a corporate network, identifies vulnerabilities and proposes a redesigned architecture focused on security and resilience.
 
-2. **Detections**  
-   - [`/detections/`](./detections/) – KQL/SPL queries with:
-     - What the query detects  
-     - Short explanation  
-     - Mapped MITRE ATT&CK technique IDs  
+---
 
-As I learn more, I’ll keep adding:
+## 🛠️ Skills Demonstrated
 
-- New detections  
-- More detailed incident reports  
-- Web attack defender notes  
-- At least one full capstone investigation
+- SIEM (Wazuh, Splunk)
+- Threat Detection & Alert Triage
+- Network Traffic Analysis (Wireshark)
+- Linux Command Line
+- KQL (Detection Queries)
+- Incident Response & Documentation
+- MITRE ATT&CK Mapping
+- Network Security & Architecture
+
+---
+
+## 📁 Repository Structure
+
+- `detections/` – KQL detections and alert logic  
+- `wireshark/` – network traffic analysis labs  
+- `incidents/` – investigation write ups  
+- `hunts/` – threat hunting exercises  
+- `capstone/` – full network security assessment project  
+
+---
+
+## 🧠 SOC Focus
+
+This repository reflects how a SOC analyst would:
+
+- Monitor and analyze alerts  
+- Investigate suspicious activity  
+- Correlate logs across systems  
+- Identify indicators of compromise (IOCs)  
+- Document findings and escalate incidents  
+
+---
+
+## 🎯 Objective
+
+This repository is designed to demonstrate the practical skills required for an entry level SOC Analyst role.
+
+I am currently seeking entry level SOC Analyst or Security Analyst opportunities.
+
+---
+
+## 🔗 Links
+
+- GitHub: https://github.com/ERROR23141/soc-playbook
+- LinkedIn: https://linkedin.com/in/luiscervantescyber
