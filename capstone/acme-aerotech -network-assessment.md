@@ -1,8 +1,8 @@
-# Capstone Project - Network Security & Resilience Assesment
+# Capstone Project - Network Security & Resilience Assessment
 
 ## Overview
 
-This project simulates a security and resilience assesment for a fictional aerospace company, Acme Aerotech.
+This project simulates a security and resilience assessment for a fictional aerospace company, Acme Aerotech.
 
 The objective was to analyze the company's existing network architecture to identify security and availability risks and design and improved network that enhances both security and reliability.
 
