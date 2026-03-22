@@ -126,11 +126,11 @@ The redesigned network introduces:
 
 ## Supporting Materials 
 
-### 📄 Presentation Slides
-[View Slides](./Acme Aerotech SlideDeck.pdf)
+## 📄 Presentation Slides
+[View Slides](./acme-aerotech-slides.pdf)
 
 ## 🖼️ Network Diagram
-[View Diagram](./Acme Assesment Network Redesign.jpg)
+[View Diagram](./acme-network-diagram.jpg)
 
 ## 🎥 Capstone Video
 [Watch Presentation](https://drive.google.com/file/d/1VnR_hM6LNQzbtp_7c-Ol7qx7Gb4aAI1u/view?usp=drive_link)
