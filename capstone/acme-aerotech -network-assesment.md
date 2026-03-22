@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project stimulates a security and resilience assesment for a fictional aerospace company, Acme Aerotech.
+This project simulates a security and resilience assesment for a fictional aerospace company, Acme Aerotech.
 
 The objective was to analyze the company's existing network architecture to identify identify security and availability risks and design and improved network that enhances both security and reliability.
 
